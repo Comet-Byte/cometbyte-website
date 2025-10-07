@@ -10,6 +10,7 @@ The following components have been fully translated and are working:
    - CometByte branding text
 
 2. **Hero** (`src/app/hero.tsx`)
+
    - Main title and subtitle
    - Service showcase labels
    - CTA button
