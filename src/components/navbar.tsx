@@ -291,12 +291,12 @@ export function Navbar() {
   };
 
   return (
-    <div className="px-4 sticky top-0 z-50">
-      <div className="mx-auto container relative">
+    <div className="px-2 sm:px-4 sticky top-0 z-50">
+      <div className="mx-auto container relative max-w-full">
         <MTNavbar
           blurred
           color="transparent"
-          className={`z-50 mt-2 relative pr-3 py-2 pl-4 rounded-xl backdrop-blur-xl border shadow-sm transition-all duration-300 ${
+          className={`z-50 mt-2 relative pr-2 sm:pr-3 py-2 pl-2 sm:pl-4 rounded-xl backdrop-blur-xl border shadow-sm transition-all duration-300 ${
             servicesOpen 
               ? 'bg-gray-900/95 border-gray-800' 
               : 'bg-white/60 dark:bg-black/40 border-black/10 dark:border-white/10'
@@ -307,11 +307,11 @@ export function Navbar() {
           onResize={() => {}} 
           onResizeCapture={() => {}}
         >
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <Link href="/">
               <Typography 
                 color="blue-gray" 
-                className={`text-lg font-bold cursor-pointer transition-colors duration-300 ${
+                className={`text-base sm:text-lg font-bold cursor-pointer transition-colors duration-300 ${
                   servicesOpen ? 'text-white' : 'text-gray-900'
                 }`}
                 placeholder="" 
@@ -362,10 +362,10 @@ export function Navbar() {
             </IconButton>
           </div>
           
-          {/* Apple-Style Mega Menu Dropdown */}
+          {/* Apple-Style Mega Menu Dropdown - Hidden on mobile */}
           {servicesOpen && (
             <div 
-              className="absolute left-0 right-0 top-full mt-0 pt-4 pb-8 bg-gray-900/95 backdrop-blur-xl rounded-b-xl border-x border-b border-gray-800 shadow-2xl"
+              className="hidden lg:block absolute left-0 right-0 top-full mt-0 pt-4 pb-8 bg-gray-900/95 backdrop-blur-xl rounded-b-xl border-x border-b border-gray-800 shadow-2xl"
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
               style={{
@@ -373,24 +373,24 @@ export function Navbar() {
               }}
             >
               <div className="container mx-auto px-8">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                   {SERVICES_MENU.map((service, index) => (
                     <Link 
                       key={index} 
                       href={service.href}
                       className="group"
                     >
-                      <div className="flex items-start gap-4 p-4 rounded-lg hover:bg-white/10 transition-all duration-200">
-                        <div className="flex-1">
-                          <h3 className="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition-colors">
+                      <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-white/10 transition-all duration-200">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-white font-semibold text-xs sm:text-sm mb-1 group-hover:text-blue-400 transition-colors truncate">
                             {t(service.titleKey)}
                           </h3>
-                          <p className="text-gray-400 text-xs leading-relaxed">
+                          <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">
                             {t(service.descKey)}
                           </p>
                         </div>
                         <svg 
-                          className="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" 
+                          className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-white group-hover:translate-x-1 transition-all duration-200 flex-shrink-0" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"

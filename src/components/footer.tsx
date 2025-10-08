@@ -56,13 +56,13 @@ const CURRENT_YEAR = new Date().getFullYear();
 export function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="px-8 pt-24 pb-8">
+    <footer className="px-4 sm:px-6 md:px-8 pt-12 sm:pt-16 md:pt-24 pb-6 sm:pb-8">
       <div className="container max-w-6xl flex flex-col mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 !w-full ">
-          <div className="flex col-span-2 items-start gap-10 mb-10 lg:mb-0 md:gap-20 lg:gap-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-0 !w-full">
+          <div className="flex flex-col sm:flex-row col-span-1 sm:col-span-2 items-start gap-8 sm:gap-10 md:gap-20 lg:gap-28 mb-10 lg:mb-0">
             {LINKS.map(({ titleKey, items }) => (
-              <ul key={titleKey} className="min-w-fit">
-                <Typography variant="h6" color="blue-gray" className="mb-4 font-bold text-gray-900" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+              <ul key={titleKey} className="w-full sm:min-w-fit">
+                <Typography variant="h6" color="blue-gray" className="mb-3 sm:mb-4 font-bold text-gray-900 text-sm sm:text-base" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
                   {t(titleKey)}
                 </Typography>
                 {items.map((link, index) => (
@@ -70,8 +70,8 @@ export function Footer() {
                     <Typography
                       as="a"
                       href={link.href}
-                      className="py-1 font-normal !text-gray-600 transition-colors hover:!text-gray-900 text-sm flex items-center gap-2"
-                      placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}
+                      className="py-1 font-normal !text-gray-600 transition-colors hover:!text-gray-900 text-xs sm:text-sm flex items-center gap-2"
+                      placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}
                     >
                       {link.icon === 'email' && (
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,21 +95,21 @@ export function Footer() {
               </ul>
             ))}
           </div>
-          <div className="">
-            <Typography variant="h6" className="mb-3 text-left font-bold text-gray-900" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
+          <div className="w-full">
+            <Typography variant="h6" className="mb-3 text-left font-bold text-gray-900 text-sm sm:text-base" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
               {t('footer.newsletter')}
             </Typography>
-            <Typography className="!text-gray-500 font-normal mb-4 text-base" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
+            <Typography className="!text-gray-500 font-normal mb-4 text-sm sm:text-base" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
               {t('footer.newsletterDesc')}
             </Typography>
-            <Typography variant="small" className="font-medium mb-2 text-left" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
+            <Typography variant="small" className="font-medium mb-2 text-left text-xs sm:text-sm" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
               {t('footer.emailPlaceholder')}
             </Typography>
-            <div className="flex mb-3 flex-col lg:flex-row items-start gap-4">
+            <div className="flex mb-3 flex-col sm:flex-col lg:flex-row items-start gap-3 sm:gap-4">
               <div className="w-full">
                 {/* @ts-ignore */}
                 <Input label={t('footer.emailPlaceholder')} color="gray" />
-                <Typography className="font-medium mt-3 !text-sm !text-gray-500 text-left" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
+                <Typography className="font-medium mt-2 sm:mt-3 !text-xs sm:!text-sm !text-gray-500 text-left" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
                   I agree to the{" "}
                   <a
                     href="#!"
@@ -119,7 +119,7 @@ export function Footer() {
                   </a>
                 </Typography>
               </div>
-              <Button color="gray" className="w-full lg:w-fit" size="md" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
+              <Button color="gray" className="w-full sm:w-full lg:w-fit" size="md" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}>
                 {t('footer.subscribe')}
               </Button>
             </div>
@@ -127,7 +127,7 @@ export function Footer() {
         </div>
         <Typography
           color="blue-gray"
-          className="md:text-center mt-16 font-normal !text-gray-700"
+          className="text-center mt-8 sm:mt-12 md:mt-16 font-normal !text-gray-700 text-xs sm:text-sm"
           placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}} onResize={() => {}} onResizeCapture={() => {}}
         >
           &copy; {CURRENT_YEAR} CometByte. {t('footer.rights')}

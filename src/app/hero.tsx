@@ -1138,13 +1138,13 @@ export default function PremiumHero() {
                 ))}
             </div>
 
-            <div className="relative z-10 container mx-auto px-6">
-                <div className="min-h-screen flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 pt-4 pb-20">
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-full overflow-hidden">
+                <div className="min-h-[calc(100vh-80px)] sm:min-h-screen flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-20 pt-20 sm:pt-4 pb-12 sm:pb-20">
 
                     {/* Content Section */}
-                    <div className="flex-1 max-w-2xl space-y-8 lg:space-y-12 mt-4">
+                    <div className="flex-1 w-full max-w-2xl space-y-6 sm:space-y-8 lg:space-y-12 mt-4">
                         {/* Service Indicator */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 sm:gap-4 overflow-hidden">
                             <div className="flex gap-1">
                                 {services.map((_, index) => (
                                     <button
@@ -1158,16 +1158,16 @@ export default function PremiumHero() {
                                 ))}
                             </div>
                             <div className="h-px bg-gradient-to-r from-gray-300 to-transparent flex-1" />
-                            <span className="text-sm font-medium text-gray-600 uppercase tracking-widest">
+                            <span className="text-xs sm:text-sm font-medium text-gray-600 uppercase tracking-wide sm:tracking-widest whitespace-nowrap">
                                 {t(`hero.showcase${activeService + 1}`)}
                             </span>
                         </div>
 
                         {/* Main Content */}
-                        <div className="space-y-6">
+                        <div className="space-y-4 sm:space-y-6">
                             {/* Title Group */}
-                            <div className="space-y-4">
-                                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+                            <div className="space-y-3 sm:space-y-4">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
                                     {t('hero.title').split(' ').map((word, i) => (
                                         <div
                                             key={i}
@@ -1180,22 +1180,22 @@ export default function PremiumHero() {
                                     ))}
                                 </h1>
 
-                                <div className={`text-xl lg:text-2xl font-light text-gray-700 transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
+                                <div className={`text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-700 transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
                                     }`} style={{ transitionDelay: '300ms' }}>
                                     {t('hero.subtitle')}
                                 </div>
                             </div>
 
                             {/* Description */}
-                            <p className={`text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
+                            <p className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
                                 }`} style={{ transitionDelay: '500ms' }}>
                                 {currentService.description}
                             </p>
 
                             {/* Key Benefit */}
-                            <div className={`bg-gray-50/80 backdrop-blur-md border border-gray-200 rounded-2xl p-6 transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
+                            <div className={`bg-gray-50/80 backdrop-blur-md border border-gray-200 rounded-2xl p-4 sm:p-6 transition-all duration-700 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'
                                 }`} style={{ transitionDelay: '700ms' }}>
-                                <p className="text-gray-800 font-medium">
+                                <p className="text-sm sm:text-base text-gray-800 font-medium">
                                     {currentService.benefit}
                                 </p>
                             </div>
@@ -1203,9 +1203,9 @@ export default function PremiumHero() {
                     </div>
 
                     {/* Visual Section */}
-                    <div className="flex-1 flex items-center justify-center">
+                    <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
                         <div
-                            className="relative w-80 h-80 lg:w-[500px] lg:h-[500px] transition-transform duration-200"
+                            className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[500px] lg:h-[500px] transition-transform duration-200 max-w-full"
                             style={{
                                 transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
                             }}
@@ -1213,7 +1213,7 @@ export default function PremiumHero() {
                             {/* Main SVG Container */}
                             <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br from-white to-gray-50 backdrop-blur-2xl border border-gray-200 shadow-2xl transition-all duration-1000 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                                 }`}>
-                                <div className="absolute inset-6 rounded-2xl bg-white/50 backdrop-blur-md border border-gray-100">
+                                <div className="absolute inset-4 sm:inset-6 rounded-2xl bg-white/50 backdrop-blur-md border border-gray-100">
                                     <SVGComponent isActive={!isTransitioning} />
                                 </div>
                             </div>
@@ -1232,19 +1232,20 @@ export default function PremiumHero() {
                 </div>
 
                 {/* Fixed CTA Button - Clean Black Design */}
-                <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+                <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 px-4 w-full sm:w-auto max-w-[calc(100%-2rem)]">
                     <a 
                         href="https://wa.me/971552094128?text=Hi%20CometByte!%20I'm%20interested%20in%20starting%20a%20project%20with%20you.%20Let's%20discuss%20my%20requirements."
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="w-full sm:w-auto block"
                     >
                         <button
-                            className="group relative px-8 py-3 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl border border-black/10 backdrop-blur-sm overflow-hidden"
+                            className="group relative w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-black text-white text-xs sm:text-sm font-medium rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl border border-black/10 backdrop-blur-sm overflow-hidden"
                         >
-                            <span className="relative z-10 flex items-center gap-2">
+                            <span className="relative z-10 flex items-center justify-center gap-2">
                                 {t('hero.cta')}
                                 <svg
-                                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                                    className="w-3 h-3 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform duration-300"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"

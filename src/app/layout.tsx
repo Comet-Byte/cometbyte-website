@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "CometByte - Transform Your Digital Future",
   description:
     "Empowering businesses with cutting-edge technology solutions. From startups to enterprises, we deliver innovation that drives growth.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Mobile Viewport Meta Tag */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        
         {/* Google Fonts - Roboto with Latin and Cyrillic support */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
