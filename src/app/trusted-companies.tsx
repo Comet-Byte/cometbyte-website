@@ -10,9 +10,7 @@ const COMPANIES = [
   "apollo",
   "jio",
   "jct",
-
-
-];
+].filter(Boolean); // Remove any empty/undefined values
 
 function TrustedCompanies() {
   const { t } = useTranslation();
